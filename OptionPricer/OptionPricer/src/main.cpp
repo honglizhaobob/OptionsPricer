@@ -18,25 +18,25 @@ int main() {
     double volatility = 0.2;  // 20%
 
     // European call option
-    EuropeanOption europeanCall(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, true);  // true for call
+    EuropeanOption europeanCall(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, true);
     double europeanCallPrice = europeanCall.price();
     europeanCall.display();
     std::cout << "European Call Option Price = " << europeanCallPrice << "\n\n";
 
     // European put option
-    EuropeanOption europeanPut(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, false);  // false for put
+    EuropeanOption europeanPut(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, false);
     double europeanPutPrice = europeanPut.price();
     europeanPut.display();
     std::cout << "European Put Option Price = " << europeanPutPrice << "\n\n";
 
     // American call option
-    AmericanOption americanCall(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, true);  // true for call
+    AmericanOption americanCall(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, true);
     double americanCallPrice = americanCall.price();
     americanCall.display();
     std::cout << "American Call Option Price = " << americanCallPrice << "\n\n";
 
     // American put option
-    AmericanOption americanPut(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, false);  // false for put
+    AmericanOption americanPut(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, false);
     double americanPutPrice = americanPut.price();
     americanPut.display();
     std::cout << "American Put Option Price = " << americanPutPrice << "\n\n";
