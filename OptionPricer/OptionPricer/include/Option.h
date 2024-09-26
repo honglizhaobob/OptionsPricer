@@ -1,10 +1,3 @@
-//
-//  Option.h
-//  OptionPricer
-//
-//  Created by Bob Zhao on 9/17/24.
-//
-
 #ifndef Option_h
 #define Option_h
 
@@ -19,18 +12,25 @@ protected:
     double maturity;
     double riskFreeRate;
     double volatility;
+    bool isCall;  // true for call, false for put
     
 public:
     // constructor
-    Option(double _strike, double _underlying, double _maturity, double _riskFreeRate, double _volatility) : strike(_strike), underlying(_underlying), maturity(_maturity), riskFreeRate(_riskFreeRate), volatility(_volatility) {}
+    Option(double _strike, double _underlying, double _maturity, double _riskFreeRate, double _volatility, bool _isCall)
+        : strike(_strike), underlying(_underlying), maturity(_maturity), riskFreeRate(_riskFreeRate), volatility(_volatility), isCall(_isCall) {}
     
     // virtual destructor to ensure proper cleanup of derived classes
     virtual ~Option() {}
     
     // virtual function to be overridden for specific options
     virtual double price() const = 0;
+
+    // getter for option type
+    bool getIsCall() const {
+        return isCall;
+    }
     
-    // getter
+    // getter for other option properties
     double getStrike() const {
         return strike;
     }
@@ -47,14 +47,18 @@ public:
         return volatility;
     }
     
-    // verbose print details
+    // print option details
     virtual void display() const {
-        std::cout << "Option Properties \n";
-        std::cout << "*> Strike = " << strike << "\n";
-        std::cout << "*> Underlying Price = " << underlying << "\n";
-        std::cout << "*> Maturity (Yr) = " << maturity << "\n";
-        std::cout << "*> Risk Free Rate = " << riskFreeRate << "\n";
-        std::cout << "*> Volatility = " << volatility << "\n";
+        std::cout << "===========================\n";
+        std::cout << "      Option Properties     \n";
+        std::cout << "===========================\n";
+        std::cout << (isCall ? "Option Type:     Call\n" : "Option Type:     Put\n");
+        std::cout << "Strike Price:    " << strike << "\n";
+        std::cout << "Underlying Price:" << underlying << "\n";
+        std::cout << "Maturity:        " << maturity << " year(s)\n";
+        std::cout << "Risk-Free Rate:  " << riskFreeRate * 100 << "%\n";
+        std::cout << "Volatility:      " << volatility * 100 << "%\n";
+        std::cout << "===========================\n";
     }
 };
 
