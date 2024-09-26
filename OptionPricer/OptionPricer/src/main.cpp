@@ -7,22 +7,35 @@
 
 #include <iostream>
 #include "EuropeanOption.h"
-
+#include "AmericanOption.h"
 int main() {
-    // quick testing of Black Scholes
+    // set parameters for call options
     double strikePrice = 100.0;
     double underlyingPrice = 105.0;
     double maturity = 1.0;
     double riskFreeRate = 0.05;
     double volatility = 0.2;
     
-    EuropeanOption callOption(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility);
-    // price it
-    double callPrice = callOption.price();
+    // European option
+    EuropeanOption europeanCall(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility);
+    double europeanCallPrice = europeanCall.price();
+    europeanCall.display();
+    std::cout << "European call option price = " << europeanCallPrice << "\n\n";
     
-    callOption.display();
     
-    std::cout << "Call Option Price = " << callPrice << "\n";
+    // American option
+    AmericanOption americanCall(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility);
+    double americanCallPrice = americanCall.price();
+    americanCall.display();
+    std::cout << "American call option price = " << americanCallPrice << "\n\n";
+    
+    
+    
+    
+    
+    
+    
+    
     
     return 0;
 }

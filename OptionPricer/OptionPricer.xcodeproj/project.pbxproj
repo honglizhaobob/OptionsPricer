@@ -27,6 +27,7 @@
 		FDCF0A692C9963300037D52B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FDCF0A6B2C9963CA0037D52B /* Option.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
 		FDCF0A6C2C99664A0037D52B /* EuropeanOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EuropeanOption.h; sourceTree = "<group>"; };
+		FDD766582CA6143D00E62AF7 /* AmericanOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AmericanOption.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 			children = (
 				FDCF0A6B2C9963CA0037D52B /* Option.h */,
 				FDCF0A6C2C99664A0037D52B /* EuropeanOption.h */,
+				FDD766582CA6143D00E62AF7 /* AmericanOption.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -283,6 +285,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /opt/homebrew/opt/libomp/lib;
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
+					"-Xpreprocessor",
+					"-fopenmp",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -291,6 +298,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /opt/homebrew/opt/libomp/lib;
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
+					"-Xpreprocessor",
+					"-fopenmp",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
