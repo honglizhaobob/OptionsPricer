@@ -3,7 +3,7 @@
 
 **OptionsPricer** is a C++ project that implements options pricing models for the **European**, **American**, and **Bermuda** options, supporting both **call** and **put** options. The project provides accurate option prices using the **Black-Scholes formula** for European options, the **binomial tree method** for American options, and Bermuda options with support for early exercise at specific dates.
 
-![Option Pricing Animation](animations/option_pricing.gif)
+<img src="animations/option_pricing.gif" width="500px" />
 
 ## Table of Contents
 - [Introduction](#introduction)
