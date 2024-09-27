@@ -5,11 +5,13 @@
 
 
 
-<div style="display: flex; justify-content: center;">
-  <img src="animations/option_pricing.gif" width="500px" style="margin-right: 20px;" />
-  <img src="animations/monte_carlo_pricing_with_option_convergence.gif" width="500px" />
+<div style="text-align: center;">
+  <img src="animations/option_pricing.gif" width="500px" />
 </div>
 
+<div style="text-align: center; margin-top: 20px;">
+  <img src="animations/monte_carlo_pricing_with_option_convergence.gif" width="500px" />
+</div>
 
 
 ## Table of Contents
