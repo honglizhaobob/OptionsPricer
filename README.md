@@ -40,27 +40,31 @@ The Black-Scholes formula provides an exact solution for European option prices,
 - **σ**: Volatility
 
 The formula for a **European Call** option is:
-\[
+
+$$
 C = S N(d1) - K e^{-rT} N(d2)
-\]
-Where:
-\[
+$$
+
+where:
+$$
 d1 = \frac{\log(S/K) + (r + 0.5 \sigma^2)T}{\sigma \sqrt{T}}, \quad d2 = d1 - \sigma \sqrt{T}
-\]
+$$
+
 And \(N(x)\) is the cumulative normal distribution function.
 
-For a **European Put**, the formula is:
-\[
+For a **European Put**, the formula becomes:
+
+$$
 P = K e^{-rT} N(-d2) - S N(-d1)
-\]
+$$
 
 ### Binomial Tree Model (American)
 The binomial tree method is used to calculate the price of American options, which accounts for early exercise. The option price is determined by simulating the price evolution of the underlying asset over discrete time steps.
 
 At each node in the tree:
-- The price can go **up** by a factor of \( u = e^{\sigma \sqrt{\Delta t}} \)
-- The price can go **down** by a factor of \( d = \frac{1}{u} \)
-- The **risk-neutral probability** of an up move is \( p = \frac{e^{r \Delta t} - d}{u - d} \)
+- The price can go **up** by a factor of $$u = e^{\sigma \sqrt{\Delta t}}$$
+- The price can go **down** by a factor of $$d = \frac{1}{u}$$
+- The **risk-neutral probability** of an up move is $$p = \frac{e^{r \Delta t} - d}{u - d}$$
 
 At each step, the option's value is calculated as:
 \[
