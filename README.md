@@ -42,17 +42,17 @@ The Black-Scholes formula provides an exact solution for European option prices,
 The formula for a **European Call** option is:
 
 $$
-C = S \cdot N(d1) - K e^{-rT} N(d2)
+C = S \cdot N(d_1) - K e^{-rT} N(d_2)
 $$
 
-where: $$d1 = \frac{\log(S/K) + (r + 0.5 \sigma^2)T}{\sigma \sqrt{T}}, \quad d2 = d1 - \sigma \sqrt{T}$$
+where: $$d_1 = \frac{\log(S/K) + (r + 0.5 \sigma^2)T}{\sigma \sqrt{T}}, \quad d_2 = d_1 - \sigma \sqrt{T}$$
 
 And $$N(x)$$ is the cumulative normal distribution function.
 
 For a **European Put**, the formula becomes:
 
 $$
-P = K \cdot e^{-rT} N(-d2) - S \cdot N(-d1)
+P = K \cdot e^{-rT} N(-d_2) - S \cdot N(-d_1)
 $$
 
 ### Binomial Tree Model (American)
