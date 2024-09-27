@@ -69,7 +69,7 @@ At each node in the tree:
 At each step, the option's value is calculated as:
 
 $$
-V = \max\left( \text{payoff}, e^{-r \Delta t} \left( p \times V_{\text{up}} + (1 - p) \times V_{\text{down}} \right) \right)
+V = \max(\text{payoff}, e^{-r \Delta t}\cdot ( p \times V_{\text{up}} + (1 - p) \times V_{\text{down}}))
 $$
 The tree is evaluated backward, and for an American option, the option holder can decide to exercise early if the intrinsic value exceeds the expected holding value.
 
