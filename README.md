@@ -15,7 +15,7 @@
 - [Usage](#usage)
 
 ## Introduction
-OptionPricer implements financial options pricing for two major types of options: European and American. The primary difference between these options lies in their exercise features:
+`OptionPricer` implements financial options pricing for two types of options: European and American. The primary difference between these options lies in their exercise features:
 - **European options** can only be exercised at maturity.
 - **American options** allow early exercise at any point before maturity.
 
@@ -42,7 +42,7 @@ The Black-Scholes formula provides an exact solution for European option prices,
 The formula for a **European Call** option is:
 
 $$
-C = S N(d1) - K e^{-rT} N(d2)
+C = S \cdot N(d1) - K e^{-rT} N(d2)
 $$
 
 where:
