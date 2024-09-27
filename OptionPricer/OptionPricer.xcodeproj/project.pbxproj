@@ -28,6 +28,7 @@
 		FDCF0A6B2C9963CA0037D52B /* Option.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
 		FDCF0A6C2C99664A0037D52B /* EuropeanOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EuropeanOption.h; sourceTree = "<group>"; };
 		FDD766582CA6143D00E62AF7 /* AmericanOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AmericanOption.h; sourceTree = "<group>"; };
+		FDD7665A2CA6305200E62AF7 /* BermudaOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BermudaOption.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 				FDCF0A6B2C9963CA0037D52B /* Option.h */,
 				FDCF0A6C2C99664A0037D52B /* EuropeanOption.h */,
 				FDD766582CA6143D00E62AF7 /* AmericanOption.h */,
+				FDD7665A2CA6305200E62AF7 /* BermudaOption.h */,
 			);
 			path = include;
 			sourceTree = "<group>";

@@ -8,6 +8,7 @@
 #include <iostream>
 #include "EuropeanOption.h"
 #include "AmericanOption.h"
+#include "BermudaOption.h"
 
 int main() {
     // set parameters for the options
@@ -40,6 +41,21 @@ int main() {
     double americanPutPrice = americanPut.price();
     americanPut.display();
     std::cout << "American Put Option Price = " << americanPutPrice << "\n\n";
+
+    // set exercise dates for Bermuda options
+    std::vector<double> exerciseDates = {0.25, 0.5, 0.75};  // exercise at 3, 6, and 9 months
+
+    // Bermuda call option
+    BermudaOption bermudaCall(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, true, exerciseDates);
+    double bermudaCallPrice = bermudaCall.price();
+    bermudaCall.display();
+    std::cout << "Bermuda Call Option Price = " << bermudaCallPrice << "\n\n";
+
+    // Bermuda put option
+    BermudaOption bermudaPut(strikePrice, underlyingPrice, maturity, riskFreeRate, volatility, false, exerciseDates);
+    double bermudaPutPrice = bermudaPut.price();
+    bermudaPut.display();
+    std::cout << "Bermuda Put Option Price = " << bermudaPutPrice << "\n\n";
 
     return 0;
 }
