@@ -45,10 +45,7 @@ $$
 C = S \cdot N(d1) - K e^{-rT} N(d2)
 $$
 
-where:
-$$
-d1 = \frac{\log(S/K) + (r + 0.5 \sigma^2)T}{\sigma \sqrt{T}}, \quad d2 = d1 - \sigma \sqrt{T}
-$$
+where: $$d1 = \frac{\log(S/K) + (r + 0.5 \sigma^2)T}{\sigma \sqrt{T}}, \quad d2 = d1 - \sigma \sqrt{T}$$
 
 And \(N(x)\) is the cumulative normal distribution function.
 
