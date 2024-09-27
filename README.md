@@ -1,7 +1,7 @@
 
-# OptionPricer
+# OptionsPricer
 
-**OptionPricer** is a C++ project that implements pricing models for **European** and **American** options, supporting both **call** and **put** options. The project provides accurate option prices using the **Black-Scholes formula** for European options and the **binomial tree method** for American options, with support for early exercise in the latter.
+**OptionsPricer** is a C++ project that implements options pricing models for the **European** and **American** type, supporting both **call** and **put** options. The project provides accurate option prices using the **Black-Scholes formula** for European options and the **binomial tree method** for American options, with support for early exercise in the latter.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -55,7 +55,7 @@ And \(N(x)\) is the cumulative normal distribution function.
 For a **European Put**, the formula becomes:
 
 $$
-P = K e^{-rT} N(-d2) - S N(-d1)
+P = K \cdot e^{-rT} N(-d2) - S \cdot N(-d1)
 $$
 
 ### Binomial Tree Model (American)
@@ -67,34 +67,35 @@ At each node in the tree:
 - The **risk-neutral probability** of an up move is $$p = \frac{e^{r \Delta t} - d}{u - d}$$
 
 At each step, the option's value is calculated as:
-\[
+
+$$
 V = \max\left( \text{payoff}, e^{-r \Delta t} \left( p \times V_{\text{up}} + (1 - p) \times V_{\text{down}} \right) \right)
-\]
+$$
 The tree is evaluated backward, and for an American option, the option holder can decide to exercise early if the intrinsic value exceeds the expected holding value.
 
 ## Installation
 1. Clone this repository:
-   \`\`\`bash
-   git clone https://github.com/your-username/OptionPricer.git
-   \`\`\`
+   ```bash
+   git clone https://github.com/honglizhaobob/OptionPricer.git
+   ```
 2. Navigate to the project directory:
-   \`\`\`bash
-   cd OptionPricer
-   \`\`\`
+   ```bash
+   cd OptionsPricer
+   ```
 3. Compile the project:
-   \`\`\`bash
+   ```bash
    g++ main.cpp -o OptionPricer
-   \`\`\`
+   ```
 
 ## Usage
 After compiling, you can run the program to price European and American options:
 
-\`\`\`bash
-./OptionPricer
-\`\`\`
+```bash
+./OptionsPricer
+```
 
-### Sample Output
-\`\`\`
+### Sample Outputs
+```
 ===========================
       Option Properties     
 ===========================
@@ -118,4 +119,4 @@ Risk-Free Rate:  5%
 Volatility:      20%
 ===========================
 European Put Option Price = 2.4596
-\`\`\`
+```
